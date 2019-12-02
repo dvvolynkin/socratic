@@ -12,10 +12,10 @@ from socratic import Dialogue
 
 
 def simple_dialogue(first_question):
-    if first_question.message == "Hello!":
+    if first_question == "Hello!":
         second_question = yield "Hello!"
 
-    elif first_question.message == "How are you?":
+    elif first_question == "How are you?":
         second_question = yield "Awesome!"
     else:
         second_question = yield (
@@ -33,7 +33,7 @@ def main():
     while True:
         question = input("-- ")
         answer = dialog.say(question)
-        print("--", answer.message)
+        print("--", answer)
 
 
 if __name__ == '__main__':
